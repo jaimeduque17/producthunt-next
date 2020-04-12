@@ -1,8 +1,10 @@
-import Head from 'next/head'
+import Layout from '../components/layout/Layout'
 
 const Home = () => (
-  <div className="container">
-    <h1>Home</h1>
+  <div>
+    <Layout>
+      <h1>Home</h1>
+    </Layout>
   </div>
 )
 
