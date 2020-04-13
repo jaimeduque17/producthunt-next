@@ -23,8 +23,14 @@ const Login = () => {
 
   const { email, password } = values
 
-  function logIn() {
-    console.log('Log In...')
+  async function logIn() {
+    try {
+      await firebase.login(email, password)
+      Router.push('/')
+    } catch (error) {
+      console.error('There was an error to authenticate the user', error.message)
+      setError(error.message)
+  }
   }
 
   return (
