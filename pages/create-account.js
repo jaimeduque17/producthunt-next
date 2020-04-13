@@ -1,12 +1,19 @@
+import { css } from '@emotion/core'
 import Layout from '../components/layout/Layout'
+import { Form, Field, InputSubmit } from '../components/ui/Form'
 
 const CreateAccount = () => (
     <div>
         <Layout>
             <>
-                <h1>CreateAccount</h1>
-                <form>
-                    <div>
+                <h1
+                    css={css`
+                        text-align: center;
+                        margin-top: 5rem; 
+                    `}
+                >Create Account</h1>
+                <Form>
+                    <Field>
                         <label htmlFor="name">Name</label>
                         <input
                             type="text"
@@ -14,8 +21,8 @@ const CreateAccount = () => (
                             placeholder="Your Name"
                             name="name"
                         />
-                    </div>
-                    <div>
+                    </Field>
+                    <Field>
                         <label htmlFor="email">Email</label>
                         <input
                             type="email"
@@ -23,8 +30,8 @@ const CreateAccount = () => (
                             placeholder="Your Email"
                             name="email"
                         />
-                    </div>
-                    <div>
+                    </Field>
+                    <Field>
                         <label htmlFor="password">Password</label>
                         <input
                             type="password"
@@ -32,11 +39,11 @@ const CreateAccount = () => (
                             placeholder="Your Password"
                             name="password"
                         />
-                    </div>
-                    <input type="submit" 
+                    </Field>
+                    <InputSubmit type="submit"
                         value="Create Account"
                     />
-                </form>
+                </Form>
             </>
         </Layout>
     </div>
