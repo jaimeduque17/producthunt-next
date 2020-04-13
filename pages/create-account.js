@@ -1,6 +1,6 @@
 import { css } from '@emotion/core'
 import Layout from '../components/layout/Layout'
-import { Form, Field, InputSubmit } from '../components/ui/Form'
+import { Form, Field, InputSubmit, Error } from '../components/ui/Form'
 
 // Validations
 import useValidation from '../hooks/useValidation'
@@ -14,7 +14,7 @@ const STATE_INITIAL = {
 
 const CreateAccount = () => {
 
-    const { values, submitForm, errors, handleSubmit, handleChange } = useValidation(STATE_INITIAL, validateCreateAccount, createAccount)
+    const { values, errors, handleSubmit, handleChange, handleBlur } = useValidation(STATE_INITIAL, validateCreateAccount, createAccount)
 
     const { name, email, password } = values
 
@@ -34,6 +34,7 @@ const CreateAccount = () => {
                     >Create Account</h1>
                     <Form
                         onSubmit={handleSubmit}
+                        noValidate
                     >
                         <Field>
                             <label htmlFor="name">Name</label>
@@ -44,8 +45,10 @@ const CreateAccount = () => {
                                 name="name"
                                 value={name}
                                 onChange={handleChange}
+                                onBlur={handleBlur}
                             />
                         </Field>
+                        {errors.name && <Error>{errors.name}</Error>}
                         <Field>
                             <label htmlFor="email">Email</label>
                             <input
@@ -55,8 +58,10 @@ const CreateAccount = () => {
                                 name="email"
                                 value={email}
                                 onChange={handleChange}
+                                onBlur={handleBlur}
                             />
                         </Field>
+                        {errors.email && <Error>{errors.email}</Error>}
                         <Field>
                             <label htmlFor="password">Password</label>
                             <input
@@ -66,8 +71,10 @@ const CreateAccount = () => {
                                 name="password"
                                 value={password}
                                 onChange={handleChange}
+                                onBlur={handleBlur}
                             />
                         </Field>
+                        {errors.password && <Error>{errors.password}</Error>}
                         <InputSubmit type="submit"
                             value="Create Account"
                         />

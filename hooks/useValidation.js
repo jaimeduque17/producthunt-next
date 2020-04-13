@@ -33,12 +33,18 @@ const useValidation = (stateInitial, validate, fn) => {
         setSubmitForm(true)
     }
 
+    // When the bur event is checked
+    const handleBlur = () => {
+        const validationErrors = validate(values)
+        setErrors(validationErrors)
+    }
+
     return {
         values,
         errors,
-        submitForm,
         handleSubmit,
-        handleChange
+        handleChange,
+        handleBlur
     };
 }
  

@@ -16,7 +16,7 @@ export default function createAccount(values) {
     // Validate password
     if (!values.password) {
         errors.password = "The password is required";
-    } else if (values.password.length > 6) {
+    } else if (values.password.length < 6) {
         errors.password = "The password must be at least 6 characters";
     }
     return errors;
