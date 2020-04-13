@@ -4,12 +4,11 @@ import useAuthentication from '../hooks/useAuthentication'
 
 const MyApp = props => {
     const user = useAuthentication()
-    console.log(user)
     const { Component, pageProps } = props
 
     return (
         <FirebaseContext.Provider
-            value={{ firebase }}
+            value={{ firebase, user }}
         >
             <Component {...pageProps} />
         </FirebaseContext.Provider>
