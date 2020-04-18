@@ -8,12 +8,12 @@ import firebase from '../firebase'
 
 // Validations
 import useValidation from '../hooks/useValidation'
-import validateCreateAccount from '../validation/createAccount'
+import validateCreateProduct from '../validation/createProduct'
 
 const STATE_INITIAL = {
   name: '',
   company: '',
-  image: '',
+  // image: '',
   url: '',
   description: ''
 }
@@ -22,7 +22,7 @@ const NewProduct = () => {
 
   const [error, setError] = useState(false)
 
-  const { values, errors, handleSubmit, handleChange, handleBlur } = useValidation(STATE_INITIAL, validateCreateAccount, createAccount)
+  const { values, errors, handleSubmit, handleChange, handleBlur } = useValidation(STATE_INITIAL, validateCreateProduct, createAccount)
 
   const { name, company, image, url, description } = values
 
@@ -72,7 +72,7 @@ const NewProduct = () => {
                 />
               </Field>
               {errors.company && <Error>{errors.company}</Error>}
-              <Field>
+              {/* <Field>
                 <label htmlFor="image">Image</label>
                 <input
                   type="file"
@@ -83,12 +83,13 @@ const NewProduct = () => {
                   onBlur={handleBlur}
                 />
               </Field>
-              {errors.image && <Error>{errors.image}</Error>}
+              {errors.image && <Error>{errors.image}</Error>} */}
               <Field>
                 <label htmlFor="url">URL</label>
                 <input
                   type="url"
                   id="url"
+                  placeholder="URL of your Product"
                   name="url"
                   value={url}
                   onChange={handleChange}
