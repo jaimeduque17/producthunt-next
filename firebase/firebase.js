@@ -1,5 +1,6 @@
 import app from 'firebase/app'
 import 'firebase/auth'
+import 'firebase/firestore'
 
 import FirebaseContext from './config'
 
@@ -9,6 +10,7 @@ class Firebase {
             app.initializeApp(FirebaseContext)
         }
         this.auth = app.auth()
+        this.db = app.firestore()
     }
 
     // Registry an user
