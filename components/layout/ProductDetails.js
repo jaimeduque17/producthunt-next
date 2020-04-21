@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
+import Link from 'next/link'
 // if i want to change the language
 // import {es} from 'date-fns/locale' 
 // and then {formatDistanceToNow(new Date(created), {locale: es})}
@@ -92,7 +93,9 @@ const ProductDetails = ({ product }) => {
                     <Image src={imageUrl} />
                 </div>
                 <div>
-                    <Title>{name}</Title>
+                    <Link href="/products/[id]" as={`/products/${id}`}>
+                        <Title>{name}</Title>
+                    </Link>
                     <Description>{description}</Description>
                     <Comments>
                         <div>
