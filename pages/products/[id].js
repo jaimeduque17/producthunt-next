@@ -66,19 +66,23 @@ const Product = () => {
                             <p>By: {creator.name} of {company}</p>
                             <img src={imageUrl} />
                             <p>{description}</p>
-                            <h2>Add your comment</h2>
-                            <form>
-                                <Field>
-                                    <input
-                                        type="text"
-                                        name="message"
-                                    />
-                                    <InputSubmit
-                                        type="submit"
-                                        value="Add Comment"
-                                    />
-                                </Field>
-                            </form>
+                            {user && (
+                                <>
+                                    <h2>Add your comment</h2>
+                                    <form>
+                                        <Field>
+                                            <input
+                                                type="text"
+                                                name="message"
+                                            />
+                                            <InputSubmit
+                                                type="submit"
+                                                value="Add Comment"
+                                            />
+                                        </Field>
+                                    </form>
+                                </>
+                            )}
                             <h2 css={css`
                                 margin: 2rem 0;
                             `}>Comments</h2>
@@ -100,9 +104,11 @@ const Product = () => {
                             <div css={css`
                                 margin-top: 5rem;
                             `}>
-                                <Button>
-                                    Vote
-                            </Button>
+                                {user && (
+                                    <Button>
+                                        Vote
+                                    </Button>
+                                )}
                                 <p css={css`
                                 text-align: center;
                             `}>{vote} Votes</p>
