@@ -29,7 +29,7 @@ const Product = () => {
     const { query: { id } } = router
 
     // Firebase context
-    const { firebase } = useContext(FirebaseContext)
+    const { firebase, user } = useContext(FirebaseContext)
 
     useEffect(() => {
         if (id) {
