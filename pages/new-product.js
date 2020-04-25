@@ -39,6 +39,8 @@ const NewProduct = () => {
   // Context with the crud operation from firebase
   const { user, firebase } = useContext(FirebaseContext)
 
+  console.log(user)
+
   async function createProduct() {
     // If user doesn't have an account redirect to login
     if (!user) {
@@ -54,7 +56,11 @@ const NewProduct = () => {
       description,
       vote: 0,
       comments: [],
-      created: Date.now()
+      created: Date.now(),
+      creator: {
+        id: user.uid,
+        name: user.displayName
+      }
     }
 
     // Insert in the DB
