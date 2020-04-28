@@ -18,6 +18,17 @@ const ProductContainer = styled.div`
 }
 `
 
+const CreatorProduct = styled.p`
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #DA552F;
+    padding: .5rem 2rem;
+}
+`
+
 const Product = () => {
 
     // states
@@ -82,6 +93,13 @@ const Product = () => {
             ...comment,
             [e.target.name]: e.target.value
         }))
+    }
+
+    // Identify if the comment is writen by the creator of the product
+    const isCreator = (id) => {
+        if(creator.id === id) {
+            return true
+        }
     }
 
     const addComment = (e) => {
@@ -159,6 +177,9 @@ const Product = () => {
                                             <p>{comment.message}</p>
                                             <p>Writen by: <strong>{comment.userName}</strong>
                                             </p>
+                                            {isCreator(comment.userId) && 
+                                                <CreatorProduct>Creator</CreatorProduct>
+                                            }
                                         </li>
                                     ))}
                                 </ul>}
