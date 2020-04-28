@@ -61,7 +61,8 @@ const NewProduct = () => {
       creator: {
         id: user.uid,
         name: user.displayName
-      }
+      },
+      voted: []
     }
 
     // Insert in the DB
