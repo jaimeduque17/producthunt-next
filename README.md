@@ -1,30 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app).
+# Prduct Hunt Nextjs
+React Application developed with Nextjs.
 
-## Getting Started
+## Description
+Nextjs Page App demo which has the following features:
+1. Search Product
+2. Create Account
+3. Login
+4. Create Products
+5. Delete Products
+6. Vote for a Product
+7. Comment a Product
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
+## Libraries/Components used
+* create-next-app: Starter kit to create a Nextjs app.
+* @emotion: For styling and basic layout.
+* date-fns: Modern JavaScript date utility library.
+* firebase: It is a digital platform that is used to facilitate the development of web or mobile applications.
+* react-firebase-file-uploader: A file uploader for react that uploads images, videos and other files to your firebase storage.
+
+## Getting Started and Installing
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+* First Git clone the repo into your computer
 ```
+git clone https://github.com/jaimeduque17/producthunt-next.git
+```
+* Open your terminal
+```
+$ cd producthunt-next
+$ npm install
+```
+* This should install all the dependencies. Once done
+* Run 
+``` 
+$ yarn next
+```
+* to start the server.
+* open (http://localhost:3000) in your browser. 
+* This should open up the Demo App
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Live Demo
+I have deployed the demo application into Firebase Hosting. 
+* Live Demo URL: [https://product-hunt-45777.web.app](https://product-hunt-45777.web.app)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Authors
+* **Jaime Duque** - (https://github.com/jaimeduque17)
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/zeit/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on ZEIT Now
-
-The easiest way to deploy your Next.js app is to use the [ZEIT Now Platform](https://zeit.co/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## License
+This project is licensed under the MIT License
